@@ -7,11 +7,13 @@ terraform {
 }
 
 # Configure the AWS Provider
-provider "aws" {
- region                   = "us-east-1"
- shared_credentials_files = ["~/.aws/credentials"]
- profile                  = "vscode"
-}
+# provider "aws" {
+#  region                   = "us-east-1"
+#  shared_credentials_files = ["~/.aws/credentials"]
+#  profile                  = "vscode"
+
+# This is commented out for Jenkins. If not usuing Jenkins this is needed.
+#}
 
 module "dev-vpc" {
   source      = "./modules/vpc"
